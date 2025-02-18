@@ -34,7 +34,7 @@ sh run_cos.sh ### use CosineAnnealingLR
 If you only want to run a single dataset, you can comment out the irrelevant parts of the `sh` file, or just type something like the following command from the command line:
 
 ```shell
-python Train.py --model_name CSCAUNet --epoch 121 --batchsize 16 --trainsize 352 --train_save CSCAUNet_Kvasir_1e4_bs16_e120_s352 --lr 0.0001 --train_path $dir/data/TrainDataset --test_path $dir/data/TestDataset/Kvasir/  # you need replace ur truely Datapath to $dir.
+python Train.py --model_name CSRMANet --epoch 121 --batchsize 16 --trainsize 352 --train_save CSRMANet_Kvasir_1e4_bs16_e120_s352 --lr 0.0001 --train_path $dir/data/TrainDataset --test_path $dir/data/TestDataset/Kvasir/  # you need replace ur truely Datapath to $dir.
 ```
 
 ### Get all predicted results (.png)
@@ -44,7 +44,7 @@ If you use a `sh` file for training, it will be tested after the training is com
 If you use the `python` command for training, you can also comment out the training part of the `sh` file, or just type something like the following command at the command line:
 
 ```shell
-python Test.py --train_save CSCAUNet_Kvasir_1e4_bs16_e120_s352 --testsize 352 --test_path $dir/data/TestDataset
+python Test.py --train_save CSRMANet_Kvasir_1e4_bs16_e120_s352 --testsize 352 --test_path $dir/data/TestDataset
 ```
 
 ### Evaluating
