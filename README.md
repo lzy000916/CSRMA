@@ -55,4 +55,4 @@ python Test.py --train_save CSRMANet_Kvasir_1e4_bs16_e120_s352 --testsize 352 --
 
 
 ## Acknowledgement
-
+Many of the training strategies, datasets, and evaluation methods in this paper are based on [PraNet](https://github.com/DengPingFan/PraNet). I admire the open source spirit of Dr. Deng-Ping Fan and other authors, and am very grateful for the help provided by this work on `PraNet`.
