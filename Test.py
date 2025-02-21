@@ -10,7 +10,7 @@ from skimage import img_as_ubyte
 import time
 
 #  import models ....
-from model.CSCAUNet import CSCAUNet
+from model.CSRMAUNet import CSRMAUNet
 
 
 # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -18,7 +18,7 @@ from model.CSCAUNet import CSCAUNet
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--testsize', type=int, default=352, help='testing size')
-parser.add_argument('--pth_path', type=str, default='/CSCAUNet-bs4-lr1e4-DRIVE/CSCAUNet-bs4-lr1e4-DRIVE.pth')
+parser.add_argument('--pth_path', type=str, default='/CSRMAUNet-bs4-lr1e4-DRIVE/CSRMAUNet-bs4-lr1e4-DRIVE.pth')
 parser.add_argument('--test_path',type=str)
 parser.add_argument('--train_save', type=str,default='')
 
@@ -37,7 +37,7 @@ for _data_name in ['test','CVC-300', 'CVC-ClinicDB', 'Kvasir', 'CVC-ColonDB', 'E
 
     save_path = './Result/'+opt.train_save+'/{}/{}/'.format(opt.test_path.split('/')[-2],_data_name)
     
-    model =CSCAUNet(1,2)
+    model =CSRMAUNet(1,2)
     pth_path=os.path.join('./snapshots',opt.train_save,opt.train_save+'.pth')
     weights = torch.load(pth_path)
     new_state_dict = OrderedDict()
