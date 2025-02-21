@@ -18,7 +18,7 @@ import numpy as np
 from torchstat import stat
 
 # import models ...
-from model.CSCAUNet import CSCAUNet
+from model.CSRMAUNet import CSRMAUNet
 
 
 def structure_loss(pred, mask):
@@ -209,14 +209,14 @@ if __name__ == '__main__':
                         default='./TestDataset/CVC-300/', help='path to testing Kvasir dataset')
 
     parser.add_argument('--train_save', type=str,
-                        default='CSCAUNet-kav-best')
+                        default='CSRMAUNet-kav-best')
     parser.add_argument('--model_name', type=str,
                         help='please input your model')
     opt = parser.parse_args()
 
     # ---- build models ----
     # torch.cuda.set_device(0)  # set ur gpu device, if you run by .sh, it is can comment.
-    A = [CSCAUNet(1, 2)]
+    A = [CSRMAUNet(1, 2)]
     num = -1
     for i in range(len(A)):
         tmp = A[i].__class__.__name__
